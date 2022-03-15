@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>DAMA - 图片水印打码工具</title>
+    <link rel="icon" href="./favicon.svg">
+    <link rel="stylesheet" href="https://use.sevencdn.com/unpkg.com/@picocss/pico@1.4.4/css/pico.min.css">
+    <style>
+        #container {
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        hr {margin-bottom: 20px;}
+        canvas { box-sizing: border-box; width: 100%; border: 1px dashed #AAA; cursor: pointer }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>DAMA</h1>
+        <p>😎 一个图片打码工具，安全地为你的图片添加水印，<b>无任何网络请求</b>，特别适合各种敏感证件（身份证、驾照、公司证照等）。</p>
+ 
+        <label for="text">第一步：输入需要打水印的文字</label>
+        <input type="text" id="text" placeholder="请输入文字" autocomplete="off" maxlength="30">
+        
+        <div class="grid">
+            <div>
+            <label for="image">第二步：选择一张本地图片</label>
+            <input type="file" id="image" autocomplete="off" accept="image/png, image/jpeg, image/gif, image/jpg">
+            <label for="color">第三步：选择颜色及其他参数</label>
+            <input type="color" id="color" pattern="#[0-9A-Fa-f]{6}" autocomplete="off" value="#eeeeee">
+            </div>
+            <div>
+            <label for="alpha">透明度</label>
+            <input type="range" id="alpha" min="0" max="1" step="0.05" autocomplete="off" value="0.15">
+            
+            <label for="space">间隔</label>
+            <input type="range" id="space" min="1" max="8" step="0.2" autocomplete="off" value="4">
+            
+            <label for="size">字号</label>
+            <input type="range" id="size" min="0.5" max="3" step="0.05" autocomplete="off" value="1">
+            </div>
+        </div>
+        
+        <label for="text">第四步：点击图片下载</label>
+        <p id="graph"></p>
+
+        <hr>
+        <div id="commento"></div>
+        <p>&nbsp;</p>
+        <p style="font-size: 11px;">&copy; 2022 <a href="https://www.7ed.net" target="_blank">7ED.NET</a>, Code by <a href="https://github.com/kugeceo/shuiyin.luhui.net" target="_blank">Kugeceo</a>.</p>
+    </div>
+	
+	
+</div>
+	
+</body>
+</html>
+<script src="./build/script.js"></script>
+<script defer src="https://commento.net/js/commento.js"></script>
